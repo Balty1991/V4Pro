@@ -1,0 +1,56 @@
+name: Fetch BetAnalytics Data
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fetch-betanalytics-data
+  cancel-in-progress: true
+
+jobs:
+  fetch-data:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Fetch predictions and events
+        env:
+          BSD_TOKEN: ${{ secrets.BSD_TOKEN }}
+        run: python fetch_data.py
+
+      - name: Commit and push changes when data changed
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add data/
+
+          if git diff --staged --quiet; then
+            echo "No data changes detected. Skipping commit."
+            exit 0
+          fi
+
+          git commit -m "Auto-update $(date -u '+%Y-%m-%d %H:%M UTC')"
+          git pull --rebase origin main || true
+          git push origin HEAD:main
+
+      - name: Notify on failure
+        if: failure()
+        run: echo "::error::Workflow failed!"
