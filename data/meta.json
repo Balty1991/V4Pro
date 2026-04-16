@@ -1,6 +1,6 @@
 {
-  "status": "waiting_for_first_fetch",
-  "generated_at": null,
+  "status": "token_detected_placeholder_fetcher",
+  "generated_at": "2026-04-16 16:28:37 UTC",
   "source": "BSD Sports Data API",
-  "note": "Rulează workflow-ul Fetch BetAnalytics Data după ce setezi BSD_TOKEN."
+  "note": "Fetcher placeholder încărcat. Poți înlocui ulterior cu varianta completă din arhiva locală."
 }
