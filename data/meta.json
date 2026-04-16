@@ -1,1 +1,6 @@
-{"updated_at":"2026-04-16T07:02:26.721427+00:00","started_at":"2026-04-16T07:00:45.597103+00:00","predictions_count":243,"events_count":1042,"status":"ok","version":"v16.1-strategic-upgrade","timezone":"Europe/Bucharest","source":"bsd_api_light","header_sync":{"upcoming_predictions_count":231,"with_odds_upcoming_count":79},"bsd_status":{"upcoming_matches":2409,"with_odds":36,"ml_predictions_upcoming":233}}
+{
+  "status": "token_detected_placeholder_fetcher",
+  "generated_at": "2026-04-16 17:49:34 UTC",
+  "source": "BSD Sports Data API",
+  "note": "Fetcher placeholder încărcat. Poți înlocui ulterior cu varianta completă din arhiva locală."
+}
