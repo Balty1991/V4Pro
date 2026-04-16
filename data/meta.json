@@ -1,0 +1,6 @@
+{
+  "status": "waiting_for_first_fetch",
+  "generated_at": null,
+  "source": "BSD Sports Data API",
+  "note": "Rulează workflow-ul Fetch BetAnalytics Data după ce setezi BSD_TOKEN."
+}
