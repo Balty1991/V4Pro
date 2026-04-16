@@ -1,0 +1,9 @@
+{
+  "name": "BetAnalytics Pro V4",
+  "short_name": "V4Pro",
+  "description": "Dashboard BetAnalytics Pro V4",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#0a0e17",
+  "theme_color": "#0a0e17"
+}
